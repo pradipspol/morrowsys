@@ -1,6 +1,15 @@
 const repoOwner = 'pradipspol';
 const repoName = 'focusKube';
-const RELEASE_API_URL = `https://api.github.com/repos/${repoOwner}/${repoName}/releases`;
+const FOCUSKUBE_RELEASE_VERSION = '0.1.1-1';
+const RELEASE_DOWNLOAD_BASE = `https://github.com/${repoOwner}/${repoName}/releases/download/v${FOCUSKUBE_RELEASE_VERSION}`;
+const STATIC_RELEASE_ASSETS = [
+  { name: 'FocusKube-0.1.1-1-arm64-mac.zip', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-0.1.1-1-arm64-mac.zip` },
+  { name: 'FocusKube-0.1.1-1-arm64.dmg', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-0.1.1-1-arm64.dmg` },
+  { name: 'FocusKube-Setup-0.1.1-1.AppImage', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-Setup-0.1.1-1.AppImage` },
+  { name: 'FocusKube-Setup-0.1.1-1.deb', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-Setup-0.1.1-1.deb` },
+  { name: 'FocusKube-Setup-0.1.1-1.exe', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-Setup-0.1.1-1.exe` },
+  { name: 'FocusKube-Setup-0.1.1-1.msi', browser_download_url: `${RELEASE_DOWNLOAD_BASE}/FocusKube-Setup-0.1.1-1.msi` }
+];
 const README_API_URL = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/README.md`;
 const assetContainer = document.getElementById('release-assets');
 const statusElement = document.getElementById('release-status');
@@ -202,36 +211,9 @@ async function loadReadme() {
   }
 }
 
-async function loadLatestReleaseAssets() {
+function loadLatestReleaseAssets() {
   statusElement.textContent = 'Loading latest installers…';
-  try {
-    const response = await fetch(RELEASE_API_URL, {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        'User-Agent': 'Mozilla/5.0'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error('Release request failed');
-    }
-
-    const releases = await response.json();
-    const latestRelease = Array.isArray(releases) ? releases.find((release) => !release.draft && !release.prerelease) || releases[0] : null;
-
-    if (!latestRelease) {
-      throw new Error('No published releases found');
-    }
-
-    renderAssets(latestRelease.assets || [], latestRelease.tag_name || latestRelease.name || 'latest');
-  } catch (error) {
-    statusElement.textContent = 'Unable to load release assets right now. Please try again.';
-    if (releaseVersionTag) {
-      releaseVersionTag.textContent = 'RELEASE ASSETS';
-    }
-    renderFallbackAssetButton();
-    updateButtonsWithLatestUrl(null);
-  }
+  renderAssets(STATIC_RELEASE_ASSETS, FOCUSKUBE_RELEASE_VERSION);
 }
 
 refreshButton?.addEventListener('click', loadLatestReleaseAssets);
