@@ -511,25 +511,27 @@ footer small{color:#62748e;font-size:11px}
     padding-left:12px;
     padding-right:12px;
     gap:8px;
+    flex-wrap:wrap;
+    min-height:72px;
   }
   .nav nav{
     flex:1 1 auto;
     min-width:0;
     justify-content:flex-end;
-    gap:10px;
+    gap:8px;
     overflow:visible;
+    flex-wrap:wrap;
   }
   .nav nav a{
     flex:0 0 auto;
     font-size:11px;
     white-space:nowrap;
   }
-  .nav nav a:nth-child(3){display:inline-block}
 }
 @media (max-width:480px){
   .nav{padding-left:10px;padding-right:10px}
   .nav .brand{font-size:16px;letter-spacing:-.5px}
-  .nav nav{gap:8px}
+  .nav nav{gap:6px; width:100%; justify-content:flex-end}
   .nav nav a{font-size:10px}
 }
 @media (max-width:380px){
