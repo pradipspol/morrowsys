@@ -1,10 +1,16 @@
-# MorrowSys — fixed GitHub Pages site
+# MorrowSys GitHub Pages — final static build
 
-This version is fully static. It removes the GitHub API/README fetch and the hard-coded installer asset list that caused the product area to remain in loading/fallback states.
+This package is designed for GitHub Pages and does not use SPA/client-side routing.
 
-FocusKube downloads point to the real GitHub Releases page:
-https://github.com/pradipspol/focusKube/releases
+Routes:
+- `/`
+- `/focuskube/`
 
-MorrowSys remains the company; FocusKube is presented as a product.
+It includes a `404.html`, `CNAME`, `robots.txt`, and `sitemap.xml`.
 
-Deploy by replacing the corresponding files in the `main` branch. Keep `CNAME` as `portal.morrowsys.com`.
+## Deploy
+Copy the contents of this folder into the root of the `pradipspol/morrowsys` repository and commit/push to the branch used by GitHub Pages.
+
+Do not merge these files into a subfolder. `index.html` must be at the repository publishing root.
+
+The FocusKube download button intentionally opens the official GitHub Releases page instead of guessing individual asset filenames.
