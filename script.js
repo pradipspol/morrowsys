@@ -1,13 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener("click", event => {
-      const id = link.getAttribute("href");
-      const target = document.querySelector(id);
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.replaceState(null, "", id);
-    });
-  });
+document.addEventListener("DOMContentLoaded",function(){
+document.querySelectorAll('a[href^="#"]').forEach(function(link){
+link.addEventListener("click",function(e){
+var target=document.querySelector(this.getAttribute("href"));
+if(target){e.preventDefault();target.scrollIntoView({behavior:"smooth",block:"start"});}
+});
+});
 });
