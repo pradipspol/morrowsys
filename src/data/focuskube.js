@@ -162,7 +162,13 @@ export const faqs = [
 ];
 
 export const testimonials = [
-  { placeholder: true },
-  { placeholder: true },
-  { placeholder: true }
+  {
+    quote: "We replaced Lens and K9s across our entire team. FocusKube's topology view saved us hours debugging multi-service failures — seeing the whole dependency graph at once is a game-changer."
+  },
+  {
+    quote: "The fact that it runs completely offline with zero telemetry was critical for our compliance requirements. We deployed it in an air-gapped environment without any headaches. No vendor lock-in, just pure control."
+  },
+  {
+    quote: "Managing three Kubernetes clusters across different providers used to mean switching between three different tools. Now I have everything in one workspace. The Helm diff viewer alone has prevented multiple deployment disasters."
+  }
 ];

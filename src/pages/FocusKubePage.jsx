@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { PolicyModal } from '../components/PolicyModal';
 import {
   repoUrl,
   releaseAssets,
@@ -10,7 +11,9 @@ import {
   contributingSteps,
   faqs,
   testimonials,
-  FOCUSKUBE_RELEASE_VERSION
+  FOCUSKUBE_RELEASE_VERSION,
+  repoOwner,
+  repoName
 } from '../data/focuskube';
 
 const SUB_NAV = [
@@ -28,6 +31,8 @@ export default function FocusKubePage() {
     'FocusKube — Deep visibility into your Kubernetes clusters',
     'FocusKube is a free, open-source, self-hosted alternative to Lens and K9s for Azure AKS, AWS EKS, and local kubeconfig clusters.'
   );
+
+  const [modalOpen, setModalOpen] = useState(null);
 
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -199,27 +204,28 @@ export default function FocusKubePage() {
         <div className="label">06 / PRIVACY & LICENSE</div>
         <h2>Privacy & License<br /><span>understand our policies.</span></h2>
         <p className="body">FocusKube respects your privacy and is licensed under the Apache-2.0 license.</p>
-        <div className="iframe-container">
-          <div className="iframe-wrapper">
-            <h3>Privacy Policy</h3>
-            <iframe
-              src={`https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/PRIVACY.md`}
-              title="Privacy Policy"
-              className="policy-iframe"
-              sandbox="allow-same-origin"
-            />
-          </div>
-          <div className="iframe-wrapper">
-            <h3>License</h3>
-            <iframe
-              src={`https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/LICENSE`}
-              title="License"
-              className="policy-iframe"
-              sandbox="allow-same-origin"
-            />
-          </div>
+        <div className="policy-buttons">
+          <button className="btn secondary" onClick={() => setModalOpen('privacy')}>Read Privacy Policy</button>
+          <button className="btn secondary" onClick={() => setModalOpen('license')}>Read License</button>
         </div>
       </section>
+
+      <PolicyModal
+        isOpen={modalOpen === 'privacy'}
+        title="Privacy Policy"
+        filePath="PRIVACY.md"
+        onClose={() => setModalOpen(null)}
+        repoOwner={repoOwner}
+        repoName={repoName}
+      />
+      <PolicyModal
+        isOpen={modalOpen === 'license'}
+        title="License"
+        filePath="LICENSE"
+        onClose={() => setModalOpen(null)}
+        repoOwner={repoOwner}
+        repoName={repoName}
+      />
 
       <section ref={testimonialsRef} id="testimonials" className="section border">
         <div className="label">06 / TESTIMONIALS</div>
