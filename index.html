@@ -2,46 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="MorrowSys builds focused tools for modern infrastructure. FocusKube is a Kubernetes cluster explorer and operations console.">
+<meta name="theme-color" content="#0b1220">
 <title>MorrowSys — Systems for what's next</title>
-<link rel="icon" href="assets/morrowsys-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/assets/morrowsys-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="module" src="/src/main.jsx"></script>
 </head>
 <body>
-<header class="nav">
-<a class="brand" href="#"><img src="assets/morrowsys-mark.svg" alt="">MorrowSys</a>
-<nav><a href="#product">Product</a><a href="#principles">Principles</a><a href="#about">About</a>
-    <!-- <button class="nav-cta nav-button" type="button" id="refresh-release-assets">Refresh assets</button> -->
-</nav>
-</header>
-<main>
-<section class="hero"><div class="glow a"></div><div class="glow b"></div><div class="grid"></div>
-<div class="hero-inner"><p class="eyebrow">MorrowSys</p><h1>Systems for<br><span>what's next.</span></h1><p class="hero-copy">We build focused software for engineers working with increasingly complex systems.</p><div class="actions">
-    <!-- <button class="btn primary" type="button" id="download-latest-button">Download latest installer</button>
-    <a class="btn secondary" href="#readme">View README</a> -->
-</div>
-</div>
-</section>
-<section id="product" class="section"><div class="label">01 / PRODUCT</div><div class="two-col">
-    <div class="product-card-heading">
-    <div class="product-header"><img src="https://raw.githubusercontent.com/pradipspol/focusKube/main/platform/desktop/assets/icons/app512.png" alt="FocusKube" class="product-icon"><h2><span>Focus</span><span class="kube">Kube</span></h2></div><p class="lead">Deep visibility into your Kubernetes clusters.</p><p class="body">FocusKube brings cluster exploration and day-to-day operations into one focused experience — topology, live logs, metrics, events, Helm, YAML, terminals, and multi-cluster workflows.</p><p class="release-status" id="release-status">Loading latest installers…</p></div>
-<div class="product-card"><div class="card-top"><span>FOCUSKUBE</span><span id="release-version-tag">RELEASE ASSETS</span></div><div id="release-assets" class="download-grid" aria-live="polite"></div><div class="card-bottom">Direct download links from the latest GitHub release</div></div></div>
-<div class="product-readme"><div class="readme-card"><div id="readme-content" class="readme-content">Loading README from GitHub…</div></div></div></section>
-<section id="principles" class="section border"><div class="label">02 / PRINCIPLES</div><h2>Complex systems<br><span>deserve clarity.</span></h2><div class="principles"><article><small>01</small><h3>Focus</h3><p>Surface the information that matters without burying engineers in noise.</p></article><article><small>02</small><h3>Context</h3><p>Connect resources, events, signals, and relationships so problems make sense faster.</p></article><article><small>03</small><h3>Control</h3><p>Move from understanding to action without jumping between a dozen tools.</p></article></div></section>
-<section id="about" class="section border"><div class="label">03 / MORROWSYS</div><div class="two-col"><h2>Building the tools<br>engineers <span>need next.</span></h2><div><p class="lead">MorrowSys is an independent technology company focused on developer, infrastructure, and systems software.</p><p class="body">Our products start with real engineering problems: make complex environments easier to see, understand, and operate. FocusKube is the first step.</p></div></div></section>
-<section class="cta"><div><p class="eyebrow">START WITH FOCUS</p><h2>See what's happening<br><span>inside your kubernetes clusters.</span></h2></div>
-    <!-- <a href="#product">Try FocusKube </a> -->
-    <button class="btn primary" type="button"><a href="#product">Try FocusKube </a></button>
-</section>
-</main>
-<footer><div><strong>MorrowSys</strong><small>Systems for what's next.</small></div>
-    <div class="footer-links">
-        <!-- <button class="footer-link-button" type="button" id="footer-download-button">Latest installer</button> -->
-        <a href="mailto:morrowsys@gmail.com">Contact</a>
-    </div>
-    <small>© 2026 MorrowSys</small>
-</footer>
-<script src="script.js"></script>
-</body></html>
+<div id="root"></div>
+</body>
+</html>
