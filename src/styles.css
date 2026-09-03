@@ -417,6 +417,7 @@ nav a:hover,nav a.active{color:var(--text-strong)}
   word-break:break-word;
 }
 .feature-grid{
+  padding-top: 40px;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
@@ -546,6 +547,14 @@ footer small{color:var(--text-subtle);font-size:11px}
 }
 .home-release-link{margin-top:18px}
 .readme-project-link-button{border:0;margin-top:0}
+
+.iframe-container{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.iframe-wrapper{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r-md);background:var(--bg-elevated);padding:20px;overflow:hidden}
+.iframe-wrapper h3{margin:0 0 16px;color:var(--text-strong);font-size:16px;font-weight:600}
+.policy-iframe{width:100%;height:400px;border:none;background:var(--bg);border-radius:4px}
+@media(max-width:768px){
+  .iframe-container{grid-template-columns:1fr}
+}
 
 .trust-bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .trust-pill{

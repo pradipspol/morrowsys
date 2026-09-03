@@ -18,7 +18,9 @@ const SUB_NAV = [
   { href: '#download', label: 'Download' },
   { href: '#docs', label: 'Docs' },
   { href: '#contributing', label: 'Contributing' },
-  { href: '#faq', label: 'FAQ' }
+  { href: '#privacy-and-license', label: 'Privacy & License' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 export default function FocusKubePage() {
@@ -42,6 +44,8 @@ export default function FocusKubePage() {
   const docsRef = useIntersectionObserver();
   const contributingRef = useIntersectionObserver();
   const faqRef = useIntersectionObserver();
+  const privacyAndLicenseRef = useIntersectionObserver();
+  const testimonialsRef = useIntersectionObserver();
 
   const firstUrl = releaseAssets[0]?.browser_download_url;
 
@@ -191,14 +195,41 @@ export default function FocusKubePage() {
         </div>
       </section>
 
-      <section className="section border">
+      <section ref={privacyAndLicenseRef} id="privacy-and-license" className="section border">
+        <div className="label">06 / PRIVACY & LICENSE</div>
+        <h2>Privacy & License<br /><span>understand our policies.</span></h2>
+        <p className="body">FocusKube respects your privacy and is licensed under the Apache-2.0 license.</p>
+        <div className="iframe-container">
+          <div className="iframe-wrapper">
+            <h3>Privacy Policy</h3>
+            <iframe
+              src={`https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/PRIVACY.md`}
+              title="Privacy Policy"
+              className="policy-iframe"
+              sandbox="allow-same-origin"
+            />
+          </div>
+          <div className="iframe-wrapper">
+            <h3>License</h3>
+            <iframe
+              src={`https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/LICENSE`}
+              title="License"
+              className="policy-iframe"
+              sandbox="allow-same-origin"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section ref={testimonialsRef} id="testimonials" className="section border">
         <div className="label">06 / TESTIMONIALS</div>
         <h2>Early days<br /><span>be one of our first users.</span></h2>
         <div className="testimonial-grid">
-          {testimonials.map((_, index) => (
-            <div className="testimonial-card testimonial-placeholder" key={index}>
-              <span className="quote-mark">“</span>
-              <p>Coming soon — real feedback from early FocusKube users will go here.</p>
+          {testimonials.map((testimonial, index) => (
+            <div className="testimonial-card" key={index}>
+              <span className="quote-mark">
+              <p>”{testimonial.quote}”</p>
+              </span>
             </div>
           ))}
         </div>
