@@ -22,7 +22,7 @@ export default function ProductsPage() {
               <h2><span>Focus</span><span className="kube">Kube</span></h2>
             </div>
             <p className="lead">Deep visibility into your Kubernetes clusters.</p>
-            <p className="body">FocusKube brings cluster exploration and day-to-day operations into one focused experience - topology, live logs, metrics, events, Helm, YAML, terminals, and multi-cluster workflows.</p>
+            <p className="body">FocusKube brings cluster exploration and day-to-day operations into one focused experience - topology, live logs, metrics, events, Helm, YAML, terminals, and multi-cluster workflows.</p>            
             <div className="home-release-link">
               <Link className="link" to="/focuskube">Open the FocusKube landing page</Link>
             </div>
@@ -41,6 +41,7 @@ export default function ProductsPage() {
               ))}
             </ul>
             <div className="card-bottom">
+              <Link className="btn primary readme-project-link-button" to="/focuskube">Explore FocusKube →</Link>
               <a className="btn primary readme-project-link-button" href={repoUrl} target="_blank" rel="noopener">View project on GitHub →</a>
             </div>
           </div>

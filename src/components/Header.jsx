@@ -16,7 +16,7 @@ export default function Header() {
       <Brand />
       <nav>
         <NavLink to="/products">Products</NavLink>
-        {/* <NavLink to="/focuskube">FocusKube</NavLink> */}
+        <a href="https://blogs.morrowsys.com" target="_blank" rel="noopener">Blog</a>
       </nav>
     </header>
   );
