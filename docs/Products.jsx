@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import { features, repoUrl } from '../data/focuskube';
+import { useDocumentMeta } from '../src/hooks/useDocumentMeta';
+import { features, repoUrl } from '../src/data/focuskube';
 
 export default function ProductsPage() {
   useDocumentMeta(
