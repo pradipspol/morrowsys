@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import FocusKubePage from './pages/FocusKubePage';
 import ProductsPage from './pages/Products';
+import { useGoogleAnalytics } from './hooks/useGoogleAnalytics';
 
 function useScrollToTop() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function useScrollToTop() {
 
 export default function App() {
   useScrollToTop();
+  useGoogleAnalytics();
 
   return (
     <div className="app-shell">
